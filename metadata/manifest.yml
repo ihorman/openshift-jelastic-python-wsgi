@@ -1,17 +1,13 @@
 ---
 Name: python
 Cartridge-Short-Name: PYTHON
-Display-Name: Python 2.6
+Display-Name: Python multiversion
 Description: 'Python is a general-purpose, high-level programming language whose design
   philosophy emphasizes code readability. Popular development frameworks include:
   Django, Bottle, Pylons, Zope and TurboGears.'
-Version: '2.6'
-Versions:
-- '2.6'
-- '2.7'
-- '3.3'
+Version: '1.0'
 Source-Url: https://github.com/ihorman/openshift-jelastic-python-wsgi.git
-License: The Python License, version 2.6
+License: The Python License, version 2.7-3.4
 License-Url: http://docs.python.org/3/license.html
 Vendor: python.org
 Cartridge-Version: 0.0.12
@@ -45,36 +41,4 @@ Endpoints:
   Private-Port-Name: PORT
   Private-Port: 8080
   Public-Port-Name: PROXY_PORT
-  Protocols:
-  - http
-  - ws
-  Options:
-    primary: true
-  Mappings:
-  - Frontend: ''
-    Backend: ''
-    Options:
-      websocket: true
-  - Frontend: "/health"
-    Backend: ''
-    Options:
-      health: true
-Version-Overrides:
-  '2.7':
-    Display-Name: Python 2.7
-    License: The Python License, version 2.7.3
-    Provides:
-    - python-2.7
-    - python
-    - python(version) = 2.7
-  '3.3':
-    Display-Name: Python 3.3
-    License: The Python License, version 3.3
-    Provides:
-    - python-3.3
-    - python
-    - python(version) = 3.3
-    Categories:
-    - service
-    - python
-    - web_framework
+ 
