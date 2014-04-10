@@ -10,19 +10,19 @@ esac
 mkdir -p ${OPENSHIFT_PYTHON_DIR}etc
 
 
-[ ! -L  "/etc/httpd/conf.d/wsgi.conf" ] && ln -s ${OPENSHIFT_PYTHON_DIR}/versions/${OPENSHIFT_PYTHON_VERSION}/etc/httpd/conf.d/wsgi.conf
+#[ ! -L  "/etc/httpd/conf.d/wsgi.conf" ] && ln -s ${OPENSHIFT_PYTHON_DIR}/versions/${OPENSHIFT_PYTHON_VERSION}/etc/httpd/conf.d/wsgi.conf
 
 # Copy the version specific files to python directory
-shopt -s dotglob
-cp -rf $OPENSHIFT_PYTHON_DIR/versions/${OPENSHIFT_PYTHON_VERSION}/etc/* $OPENSHIFT_PYTHON_DIR/versions/${OPENSHIFT_PYTHON_VERSION}/etc
-[ -d $OPENSHIFT_PYTHON_DIR/versions/${OPENSHIFT_PYTHON_VERSION}/metadata ] && cp -rf $OPENSHIFT_PYTHON_DIR/versions/${OPENSHIFT_PYTHON_VERSION}/metadata/* $OPENSHIFT_PYTHON_DIR/versions/${OPENSHIFT_PYTHON_VERSION}/metadata
+#shopt -s dotglob
+#cp -rf $OPENSHIFT_PYTHON_DIR/versions/${OPENSHIFT_PYTHON_VERSION}/etc/* $OPENSHIFT_PYTHON_DIR/versions/${OPENSHIFT_PYTHON_VERSION}/etc
+#[ -d $OPENSHIFT_PYTHON_DIR/versions/${OPENSHIFT_PYTHON_VERSION}/metadata ] && cp -rf $OPENSHIFT_PYTHON_DIR/versions/${OPENSHIFT_PYTHON_VERSION}/metadata/* $OPENSHIFT_PYTHON_DIR/versions/${OPENSHIFT_PYTHON_VERSION}/metadata
 
 # Create/truncate gear-editable Apache configuration files
-echo > $OPENSHIFT_PYTHON_DIR/versions/${OPENSHIFT_PYTHON_VERSION}/etc/conf.d/openshift.conf
-echo > $OPENSHIFT_PYTHON_DIR/versions/${OPENSHIFT_PYTHON_VERSION}/etc/conf.d/passenv.conf
+#echo > $OPENSHIFT_PYTHON_DIR/versions/${OPENSHIFT_PYTHON_VERSION}/etc/conf.d/openshift.conf
+#echo > $OPENSHIFT_PYTHON_DIR/versions/${OPENSHIFT_PYTHON_VERSION}/etc/conf.d/passenv.conf
 
-cp -f $OPENSHIFT_PYTHON_DIR/versions/${OPENSHIFT_PYTHON_VERSION}/etc/conf.d/performance.conf.erb $OPENSHIFT_PYTHON_DIR/versions/${OPENSHIFT_PYTHON_VERSION}/conf/performance.conf.erb
-cp -f $OPENSHIFT_PYTHON_DIR/versions/${OPENSHIFT_PYTHON_VERSION}/etc/conf/performance.conf.erb $OPENSHIFT_PYTHON_DIR/versions/${OPENSHIFT_PYTHON_VERSION}/conf/performance.conf.erb.hidden
+#cp -f $OPENSHIFT_PYTHON_DIR/versions/${OPENSHIFT_PYTHON_VERSION}/etc/conf.d/performance.conf.erb $OPENSHIFT_PYTHON_DIR/versions/${OPENSHIFT_PYTHON_VERSION}/conf/performance.conf.erb
+#cp -f $OPENSHIFT_PYTHON_DIR/versions/${OPENSHIFT_PYTHON_VERSION}/etc/conf/performance.conf.erb $OPENSHIFT_PYTHON_DIR/versions/${OPENSHIFT_PYTHON_VERSION}/conf/performance.conf.erb.hidden
 
 
 
@@ -33,3 +33,5 @@ cp -f $OPENSHIFT_PYTHON_DIR/versions/${OPENSHIFT_PYTHON_VERSION}/etc/conf/perfor
 
 # Call the version specific setup script
 #exec ${OPENSHIFT_PYTHON_DIR}usr/versions/${version}/bin/setup $version
+
+
