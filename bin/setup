@@ -21,8 +21,8 @@ mkdir -p ${OPENSHIFT_PYTHON_DIR}etc
 #echo > $OPENSHIFT_PYTHON_DIR/versions/${OPENSHIFT_PYTHON_VERSION}/etc/conf.d/openshift.conf
 #echo > $OPENSHIFT_PYTHON_DIR/versions/${OPENSHIFT_PYTHON_VERSION}/etc/conf.d/passenv.conf
 
-#cp -f $OPENSHIFT_PYTHON_DIR/versions/${OPENSHIFT_PYTHON_VERSION}/etc/conf.d/performance.conf.erb $OPENSHIFT_PYTHON_DIR/versions/${OPENSHIFT_PYTHON_VERSION}/conf/performance.conf.erb
-#cp -f $OPENSHIFT_PYTHON_DIR/versions/${OPENSHIFT_PYTHON_VERSION}/etc/conf/performance.conf.erb $OPENSHIFT_PYTHON_DIR/versions/${OPENSHIFT_PYTHON_VERSION}/conf/performance.conf.erb.hidden
+cp -f $OPENSHIFT_PYTHON_DIR/versions/${OPENSHIFT_PYTHON_VERSION}/etc/conf.d/performance.conf.erb $OPENSHIFT_PYTHON_DIR/versions/${OPENSHIFT_PYTHON_VERSION}/etc/conf/performance.conf.erb
+cp -f $OPENSHIFT_PYTHON_DIR/versions/${OPENSHIFT_PYTHON_VERSION}/etc/conf/performance.conf.erb $OPENSHIFT_PYTHON_DIR/versions/${OPENSHIFT_PYTHON_VERSION}/etc/conf/performance.conf.erb.hidden
 
 
 
