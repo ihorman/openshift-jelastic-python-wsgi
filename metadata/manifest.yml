@@ -1,11 +1,11 @@
 ---
-Name: python
+Name: apache
 Cartridge-Short-Name: PYTHON
 Display-Name: Python multiversion
 Description: 'Python is a general-purpose, high-level programming language whose design
   philosophy emphasizes code readability. Popular development frameworks include:
   Django, Bottle, Pylons, Zope and TurboGears.'
-Version: '1.0'
+Version: '2.2'
 Source-Url: https://github.com/ihorman/openshift-jelastic-python-wsgi.git
 License: The Python License, version 2.7-3.4
 License-Url: http://docs.python.org/3/license.html
@@ -22,9 +22,6 @@ Categories:
 Website: http://www.python.org
 Help-Topics:
   Developer Center: https://www.openshift.com/developers
-Provides:
-- python-2.6
-- python
 Publishes: 
 Subscribes:
   set-env:
