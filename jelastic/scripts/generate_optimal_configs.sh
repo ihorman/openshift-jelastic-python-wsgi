@@ -7,6 +7,11 @@ TOTALMEM=`free -m | grep Mem | awk '{print $2}'`;
 MAX_CLIENTS=$(($TOTALMEM / 40));
 START_SERVERS=$(($TOTALMEM / 50));
 
+backupConfig() {
+    cp $1 $1.autobackup
+}
+
+
 applyOptimizations(){
         backupConfig $DEFAULT_HTTPD_CONFIG;
         $SED -i "/ServerLimit/c\ServerLimit     $MAX_CLIENTS" $DEFAULT_HTTPD_CONFIG;
