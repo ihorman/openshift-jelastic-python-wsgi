@@ -1,6 +1,6 @@
 def application(environ, start_response):
     import sys
-    path = 'YOUR_WWW_ROOT_DIRECTORY'
+    path = '/opt/repo/ROOT'
     if path not in sys.path:
         sys.path.append(path)
     from pyinfo import pyinfo
