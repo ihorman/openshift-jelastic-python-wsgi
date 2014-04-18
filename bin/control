@@ -43,6 +43,10 @@ function start_apache() {
 }
 
 function start() {
+<<<<<<< HEAD
+=======
+    [ ! -d "${OPENSHIFT_REPO_DIR}/logs" ] && { mkdir -p "${OPENSHIFT_REPO_DIR}/logs"; chown ${OPENSHIFT_GEAR_UUID}:${OPENSHIFT_GEAR_UUID} "${OPENSHIFT_REPO_DIR}/logs"   ;};
+>>>>>>> b88485b113a83a16e06f56c7351d5b9432ffd568
     if [ -f "${OPENSHIFT_REPO_DIR}app.py" ]; then
         start_app
     else

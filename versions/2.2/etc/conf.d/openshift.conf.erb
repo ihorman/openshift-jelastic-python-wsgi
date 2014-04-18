@@ -1,5 +1,9 @@
 ServerRoot "<%= ENV['OPENSHIFT_PYTHON_DIR'] %>"
+<<<<<<< HEAD
 DocumentRoot "<%= ENV['OPENSHIFT_PYTHON_DOCUMENT_ROOT'] || "#{ENV['OPENSHIFT_REPO_DIR']}wsgi" %>"
+=======
+DocumentRoot "<%= ENV['OPENSHIFT_PYTHON_DOCUMENT_ROOT'] || "#{ENV['OPENSHIFT_REPO_DIR']}ROOT" %>"
+>>>>>>> b88485b113a83a16e06f56c7351d5b9432ffd568
 Listen <%= ENV['OPENSHIFT_PYTHON_IP'] %>:<%= ENV['OPENSHIFT_PYTHON_PORT'] %>
 User <%= ENV['OPENSHIFT_GEAR_UUID'] %>
 Group <%= ENV['OPENSHIFT_GEAR_UUID'] %>
@@ -10,11 +14,16 @@ DefaultRuntimeDir "<%= "#{ENV['OPENSHIFT_PYTHON_DIR']}/run"%>"
 ErrorLog "|/usr/sbin/rotatelogs <%= ENV['OPENSHIFT_PYTHON_LOG_DIR'] %>/error_log-%Y%m%d-%H%M%S-%Z 86400"
 CustomLog "|/usr/sbin/rotatelogs <%= ENV['OPENSHIFT_PYTHON_LOG_DIR'] %>/access_log-%Y%m%d-%H%M%S-%Z 86400" combined
 
+<<<<<<< HEAD
 <Directory "<%= ENV['OPENSHIFT_PYTHON_DOCUMENT_ROOT'] || "#{ENV['OPENSHIFT_REPO_DIR']}wsgi" %>">
+=======
+<Directory "<%= ENV['OPENSHIFT_PYTHON_DOCUMENT_ROOT'] || "#{ENV['OPENSHIFT_REPO_DIR']}ROOT" %>">
+>>>>>>> b88485b113a83a16e06f56c7351d5b9432ffd568
   AllowOverride all
   Options -MultiViews
 </Directory>
 
+<<<<<<< HEAD
 <% #Backward compatibilty with wsgi/static/ directory
   if File.directory?("#{ENV['OPENSHIFT_REPO_DIR']}wsgi/static") || File.symlink?("#{ENV['OPENSHIFT_REPO_DIR']}wsgi/static")
     %><%= "Alias /static #{ENV['OPENSHIFT_REPO_DIR']}wsgi/static" %><%
@@ -22,6 +31,15 @@ CustomLog "|/usr/sbin/rotatelogs <%= ENV['OPENSHIFT_PYTHON_LOG_DIR'] %>/access_l
 %>
 
 WSGIScriptAlias / "<%= ENV['OPENSHIFT_PYTHON_WSGI_APPLICATION'] || "#{ENV['OPENSHIFT_REPO_DIR']}wsgi/application" %>"
+=======
+<% #Backward compatibilty with ROOT/static/ directory
+  if File.directory?("#{ENV['OPENSHIFT_REPO_DIR']}ROOT/static") || File.symlink?("#{ENV['OPENSHIFT_REPO_DIR']}ROOT/static")
+    %><%= "Alias /static #{ENV['OPENSHIFT_REPO_DIR']}ROOT/static" %><%
+  end
+%>
+
+WSGIScriptAlias / "<%= ENV['OPENSHIFT_PYTHON_WSGI_APPLICATION'] || "#{ENV['OPENSHIFT_REPO_DIR']}ROOT/application" %>"
+>>>>>>> b88485b113a83a16e06f56c7351d5b9432ffd568
 WSGISocketPrefix "/tmp/wsgi"
 WSGIPassAuthorization On
 WSGIProcessGroup <%= ENV['OPENSHIFT_GEAR_UUID'] %>
